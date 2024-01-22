@@ -1,0 +1,141 @@
+CinematicEntity Scen_CamTest {
+ coords 103.965 1 122.727
+ userScript "	BaseWorld world;"\
+ "	"\
+ "	string helperEntityName = \"CinematicHelperEntity\";"\
+ "	"\
+ "	IEntity helperCamera;"\
+ "	//SCR_ManualCamera helperCamera;"\
+ "	string helperCameraName = \"CinematicHelperCamera1\";"\
+ "	SCR_CinematicHelperComponent cineHelperComp;"\
+ "	"\
+ "	IEntity cameraTargetEntity;"\
+ "	int boneIndex;"\
+ "	"\
+ "	vector tempTransformStorage[4];"\
+ "	"\
+ "	vector posOffset = \"0 0 0\";"\
+ "	vector rotOffset = \"0 0 0\";"
+ Scene CinematicScene "{606A1829D1323A31}" {
+  EndFrame 9000
+  Tracks {
+   CameraCinematicTrack "{606A1829ED9FD6CD}" {
+    TrackName "Camera"
+    Position Vector3CinematicTrack "{606A1829ED9FD69B}" {
+     TrackName "Position"
+     X FloatCinematicTrack "{606A1829ED9FD690}" {
+      TrackName "X"
+      Keyframes {
+       FloatCinematicKeyframe "{606CF6946CC1DA6B}" {
+        FrameNumber 0
+        Value 102.728
+       }
+       FloatCinematicKeyframe "{606CF6940A9DD49E}" {
+        FrameNumber 34
+        Value 102.728
+       }
+      }
+     }
+     Y FloatCinematicTrack "{606A1829ED9FD66D}" {
+      TrackName "Y"
+      Keyframes {
+       FloatCinematicKeyframe "{606CF69455897E5D}" {
+        FrameNumber 0
+        Value 3.567
+       }
+       FloatCinematicKeyframe "{606CF6940A9DD245}" {
+        FrameNumber 34
+        Value 3.567
+       }
+      }
+     }
+     Z FloatCinematicTrack "{606A1829ED9FD661}" {
+      TrackName "Z"
+      Keyframes {
+       FloatCinematicKeyframe "{606CF694516CEA4A}" {
+        FrameNumber 0
+        Value 120.453
+       }
+       FloatCinematicKeyframe "{606CF6940A9DD153}" {
+        FrameNumber 34
+        Value 120.453
+       }
+      }
+     }
+    }
+    Angles Vector3CinematicTrack "{606A1829ED9FD67F}" {
+     TrackName "Angles"
+     X FloatCinematicTrack "{606A1829ED9FD672}" {
+      TrackName "X"
+      Keyframes {
+       FloatCinematicKeyframe "{606CF69478B5B5E9}" {
+        FrameNumber 0
+        Value -85.711
+       }
+       FloatCinematicKeyframe "{606CF6940A9DD046}" {
+        FrameNumber 34
+        Value -85.711
+       }
+      }
+     }
+     Y FloatCinematicTrack "{606A1829ED9FD675}" {
+      TrackName "Y"
+      Keyframes {
+       FloatCinematicKeyframe "{606CF694754F656E}" {
+        FrameNumber 0
+        Value 29.462
+       }
+       FloatCinematicKeyframe "{606CF6940A9DCF74}" {
+        FrameNumber 34
+        Value 29.462
+       }
+      }
+     }
+     Z FloatCinematicTrack "{606A1829ED9FD64A}" {
+      TrackName "Z"
+      Keyframes {
+       FloatCinematicKeyframe "{606CF694773C15F1}" {
+        FrameNumber 0
+        Value -10.885
+       }
+       FloatCinematicKeyframe "{606CF6940A9DCE97}" {
+        FrameNumber 34
+        Value -10.885
+       }
+      }
+     }
+    }
+    FOV FloatCinematicTrack "{606A1829ED9FD648}" {
+     TrackName "FOV"
+    }
+    DOF DOFCinematicTrack "{606A1829ED9FD647}" {
+     TrackName "DOF"
+     Enabled BooleanCinematicTrack "{606A1829ED9FD65F}" {
+      TrackName "Enabled"
+     }
+     FocusDistance FloatCinematicTrack "{606A1829ED9FD653}" {
+      TrackName "FocusDistance"
+     }
+     LengthNear FloatCinematicTrack "{606A1829ED9FD657}" {
+      TrackName "LengthNear"
+     }
+     LengthFar FloatCinematicTrack "{606A1829ED9FD654}" {
+      TrackName "LengthFar"
+     }
+    }
+    HDR HDRCinematicTrack "{606A1829ED9FD629}" {
+     TrackName "HDR"
+     ManualExposition BooleanCinematicTrack "{606A1829ED9FD62D}" {
+      TrackName "ManualExposition"
+     }
+     ExpositionLV FloatCinematicTrack "{606A1829ED9FD622}" {
+      TrackName "ExpositionLV"
+     }
+    }
+   }
+  }
+ }
+}
+SCR_ChimeraCharacter FIA_Char : "{23D81C023DBF85AC}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_RTO.et" {
+ coords 107.541 1 124.075
+}

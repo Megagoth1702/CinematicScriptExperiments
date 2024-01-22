@@ -389,6 +389,9 @@ $grp CinematicEntity {
   }
  }
 }
+Vehicle UAZ1 : "{259EE7B78C51B624}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469.et" {
+ coords 100.792 1 116.592
+}
 SCR_ChimeraCharacter CinematicHelperEntity : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et" {
  coords 102.655 1 120.503
  angleY 26.153
@@ -401,6 +404,13 @@ SCR_ChimeraCharacter CinematicHelperEntity : "{26A9756790131354}Prefabs/Characte
  }
 }
 SCR_CameraBase CinematicHelperCamera1 : "{5FDEC6D83F0800F2}Prefabs/Cinematics/CinematicHelperCamera.et" {
+ components {
+  SCR_CinematicHelperComponent "{606B1724AB4E35CD}" {
+   m_sEntitiesForDistanceMeasure {
+    "FIA_Char" "CinematicHelperEntity"
+   }
+  }
+ }
  coords 103.451 2.556 121.204
  angleX -10.886
  angleY -137.399

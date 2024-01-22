@@ -5,6 +5,9 @@ class SCR_CinematicHelperComponentClass : ScriptComponentClass
 
 class SCR_CinematicHelperComponent : ScriptComponent
 {
+	[Attribute(desc: "A UI window will be created, showing the distances between them & the currently active camera (for DOF?)")]
+	ref array<string> m_sEntitiesForDistanceMeasure = {};
+	
 	vector m_ownerTransform[4];
 	CameraManager m_CameraManager;
 	CameraBase m_ActiveCamera;
