@@ -1,0 +1,414 @@
+$grp CinematicEntity {
+ Scen_MoveCamera {
+  coords 105.2 1 120.191
+  userScript "	BaseWorld world;"\
+  "	"\
+  "	string helperEntityName = \"CinematicHelperEntity\";"\
+  "	"\
+  "	IEntity helperCamera;"\
+  "	//SCR_ManualCamera helperCamera;"\
+  "	string helperCameraName = \"CinematicHelperCamera1\";"\
+  "	SCR_CinematicHelperComponent cineHelperComp;"\
+  "	"\
+  "	IEntity cameraTargetEntity;"\
+  "	int boneIndex;"\
+  "	"\
+  "	vector tempTransformStorage[4];"\
+  "	"\
+  "	vector posOffset = \"0 0 0\";"\
+  "	vector rotOffset = \"0 0 0\";"
+  Scene CinematicScene "{606A1829D1323A31}" {
+   EndFrame 9000
+   Tracks {
+    ScriptEventsCinematicTrack "{606A1829D3965D9C}" {
+     TrackName "ScriptEvents"
+     Keyframes {
+      ScriptEventCinematicKeyframe "{606A1C8714044310}" {
+       FrameNumber 2
+       Script ""\
+       "		Math3D.MatrixIdentity4(tempTransformStorage);"\
+       "		//------------------------------------------------------------------------------"\
+       "		/*"\
+       "		Lets start treating the timeline like a generic script."\
+       "		Set up variables etc in the beginning of the timeline,"\
+       "		so that later you can just use variable names or custom methods.		"\
+       "		*/"\
+       "		//------------------------------------------------------------------------------"\
+       "		world = GetGame().GetWorld();"\
+       "		if (!world)"\
+       "			Print(\"No BaseWorld found, finding entities by name wont work.\");"\
+       "		helperCamera = IEntity.Cast(world.FindEntityByName(helperCameraName));"\
+       "		if (!helperCamera)"\
+       "			Print(\"HelperCamera \" + helperCameraName + \" could not be found by Cinematic Tool's Script\");"\
+       "		"\
+       "		cineHelperComp = SCR_CinematicHelperComponent.Cast(helperCamera.FindComponent(SCR_CinematicHelperComponent));"\
+       "		if (!cineHelperComp)"\
+       "			Print(\"SCR_CinematicHelperComponent could not be found by Cinematic Tool's Script\");"\
+       "		"\
+       "		cameraTargetEntity = IEntity.Cast(GetGame().GetWorld().FindEntityByName(helperEntityName));"\
+       "		if (!cameraTargetEntity)"\
+       "			Print(\"HelperEntity \" + cameraTargetEntity + \" could not be found by Cinematic Tool's Script\");"\
+       "	"
+      }
+      ScriptEventCinematicKeyframe "{606A1829F50D3047}" {
+       FrameNumber 5
+       Script ""\
+       "		boneIndex = cameraTargetEntity.GetAnimation().GetBoneIndex(\"LeftHandProp\");"\
+       "		AttachCameraToEntity(cameraTargetEntity, boneIndex, posOffset, rotOffset);		"\
+       "	"
+      }
+      ScriptEventCinematicKeyframe "{606CEB262DE6DE90}" {
+       FrameNumber 10
+       Script "	"\
+       "		//cineHelperComp.SetCameraTransformSnapshot();"\
+       "	DetachCamera();"\
+       "	"
+      }
+      ScriptEventCinematicKeyframe "{606CEDF62FD171A2}" {
+       FrameNumber 25
+       Script ""\
+       "posOffset = \"-0.238129 0.636868 -1.46914\"; rotOffset = \"-10.5373 10.421 -34.9678\";"\
+       "//		"\
+       "		"\
+       "	"
+      }
+      ScriptEventCinematicKeyframe "{606D0C060DAC9DE5}" {
+       FrameNumber 27
+       Script ""\
+       "		AttachCameraToEntity(cameraTargetEntity, boneIndex, posOffset, rotOffset);"\
+       "	"
+      }
+     }
+    }
+    CameraCinematicTrack "{606A1829ED9FD6CD}" {
+     TrackName "Camera"
+     Position Vector3CinematicTrack "{606A1829ED9FD69B}" {
+      TrackName "Position"
+      X FloatCinematicTrack "{606A1829ED9FD690}" {
+       TrackName "X"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF6946CC1DA6B}" {
+         FrameNumber 0
+         Value 102.728
+        }
+        FloatCinematicKeyframe "{606CF6940A9DD49E}" {
+         FrameNumber 34
+         Value 102.728
+        }
+       }
+      }
+      Y FloatCinematicTrack "{606A1829ED9FD66D}" {
+       TrackName "Y"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF69455897E5D}" {
+         FrameNumber 0
+         Value 3.567
+        }
+        FloatCinematicKeyframe "{606CF6940A9DD245}" {
+         FrameNumber 34
+         Value 3.567
+        }
+       }
+      }
+      Z FloatCinematicTrack "{606A1829ED9FD661}" {
+       TrackName "Z"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF694516CEA4A}" {
+         FrameNumber 0
+         Value 120.453
+        }
+        FloatCinematicKeyframe "{606CF6940A9DD153}" {
+         FrameNumber 34
+         Value 120.453
+        }
+       }
+      }
+     }
+     Angles Vector3CinematicTrack "{606A1829ED9FD67F}" {
+      TrackName "Angles"
+      X FloatCinematicTrack "{606A1829ED9FD672}" {
+       TrackName "X"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF69478B5B5E9}" {
+         FrameNumber 0
+         Value -85.711
+        }
+        FloatCinematicKeyframe "{606CF6940A9DD046}" {
+         FrameNumber 34
+         Value -85.711
+        }
+       }
+      }
+      Y FloatCinematicTrack "{606A1829ED9FD675}" {
+       TrackName "Y"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF694754F656E}" {
+         FrameNumber 0
+         Value 29.462
+        }
+        FloatCinematicKeyframe "{606CF6940A9DCF74}" {
+         FrameNumber 34
+         Value 29.462
+        }
+       }
+      }
+      Z FloatCinematicTrack "{606A1829ED9FD64A}" {
+       TrackName "Z"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF694773C15F1}" {
+         FrameNumber 0
+         Value -10.885
+        }
+        FloatCinematicKeyframe "{606CF6940A9DCE97}" {
+         FrameNumber 34
+         Value -10.885
+        }
+       }
+      }
+     }
+     FOV FloatCinematicTrack "{606A1829ED9FD648}" {
+      TrackName "FOV"
+     }
+     DOF DOFCinematicTrack "{606A1829ED9FD647}" {
+      TrackName "DOF"
+      Enabled BooleanCinematicTrack "{606A1829ED9FD65F}" {
+       TrackName "Enabled"
+      }
+      FocusDistance FloatCinematicTrack "{606A1829ED9FD653}" {
+       TrackName "FocusDistance"
+      }
+      LengthNear FloatCinematicTrack "{606A1829ED9FD657}" {
+       TrackName "LengthNear"
+      }
+      LengthFar FloatCinematicTrack "{606A1829ED9FD654}" {
+       TrackName "LengthFar"
+      }
+     }
+     HDR HDRCinematicTrack "{606A1829ED9FD629}" {
+      TrackName "HDR"
+      ManualExposition BooleanCinematicTrack "{606A1829ED9FD62D}" {
+       TrackName "ManualExposition"
+      }
+      ExpositionLV FloatCinematicTrack "{606A1829ED9FD622}" {
+       TrackName "ExpositionLV"
+      }
+     }
+    }
+   }
+  }
+ }
+ Scen_PlacedCamera {
+  coords 106.089 1 119.941
+  userScript "	BaseWorld world;"\
+  "	"\
+  "	string helperEntityName = \"CinematicHelperEntity\";"\
+  "	"\
+  "	IEntity helperCamera;"\
+  "	//SCR_ManualCamera helperCamera;"\
+  "	string helperCameraName = \"CinematicHelperCamera1\";"\
+  "	SCR_CinematicHelperComponent cineHelperComp;"\
+  "	"\
+  "	IEntity cameraTargetEntity;"\
+  "	int boneIndex;"\
+  "	"\
+  "	vector tempTransformStorage[4];"\
+  "	"\
+  "	vector posOffset = \"0 0 0\";"\
+  "	vector rotOffset = \"0 0 0\";"
+  Scene CinematicScene "{606A1829D1323A31}" {
+   EndFrame 9000
+   Tracks {
+    ScriptEventsCinematicTrack "{606A1829D3965D9C}" {
+     TrackName "ScriptEvents"
+     Keyframes {
+      ScriptEventCinematicKeyframe "{606A1C8714044310}" {
+       FrameNumber 2
+       Script ""\
+       "		Math3D.MatrixIdentity4(tempTransformStorage);"\
+       "		//------------------------------------------------------------------------------"\
+       "		/*"\
+       "		Lets start treating the timeline like a generic script."\
+       "		Set up variables etc in the beginning of the timeline,"\
+       "		so that later you can just use variable names or custom methods.		"\
+       "		*/"\
+       "		//------------------------------------------------------------------------------"\
+       "		world = GetGame().GetWorld();"\
+       "		if (!world)"\
+       "			Print(\"No BaseWorld found, finding entities by name wont work.\");"\
+       "		helperCamera = IEntity.Cast(world.FindEntityByName(helperCameraName));"\
+       "		if (!helperCamera)"\
+       "			Print(\"HelperCamera \" + helperCameraName + \" could not be found by Cinematic Tool's Script\");"\
+       "		"\
+       "		cineHelperComp = SCR_CinematicHelperComponent.Cast(helperCamera.FindComponent(SCR_CinematicHelperComponent));"\
+       "		if (!cineHelperComp)"\
+       "			Print(\"SCR_CinematicHelperComponent could not be found by Cinematic Tool's Script\");"\
+       "		"\
+       "		cameraTargetEntity = IEntity.Cast(GetGame().GetWorld().FindEntityByName(helperEntityName));"\
+       "		if (!cameraTargetEntity)"\
+       "			Print(\"HelperEntity \" + cameraTargetEntity + \" could not be found by Cinematic Tool's Script\");"\
+       "	"
+      }
+      ScriptEventCinematicKeyframe "{606A1829F50D3047}" {
+       FrameNumber 5
+       Script ""\
+       "		boneIndex = cameraTargetEntity.GetAnimation().GetBoneIndex(\"LeftHandProp\");"\
+       "		AttachCameraToEntity(cameraTargetEntity, boneIndex, posOffset, rotOffset);		"\
+       "	"
+      }
+      ScriptEventCinematicKeyframe "{606CEB262DE6DE90}" {
+       FrameNumber 20
+       Script ""\
+       "		cineHelperComp.GetOffsets(posOffset, rotOffset);"\
+       "		//DetachCamera();		"\
+       "		"\
+       "	"
+      }
+      ScriptEventCinematicKeyframe "{606CEDF62FD171A2}" {
+       FrameNumber 30
+       Script ""\
+       "		AttachCameraToEntity(cameraTargetEntity, boneIndex, posOffset, rotOffset);"\
+       "	"
+      }
+     }
+    }
+    CameraCinematicTrack "{606A1829ED9FD6CD}" {
+     TrackName "Camera"
+     Position Vector3CinematicTrack "{606A1829ED9FD69B}" {
+      TrackName "Position"
+      X FloatCinematicTrack "{606A1829ED9FD690}" {
+       TrackName "X"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF6946CC1DA6B}" {
+         FrameNumber 0
+         Value 102.728
+        }
+        FloatCinematicKeyframe "{606CF6940A9DD49E}" {
+         FrameNumber 36
+         Value 102.728
+        }
+       }
+      }
+      Y FloatCinematicTrack "{606A1829ED9FD66D}" {
+       TrackName "Y"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF69455897E5D}" {
+         FrameNumber 0
+         Value 3.567
+        }
+        FloatCinematicKeyframe "{606CF6940A9DD245}" {
+         FrameNumber 36
+         Value 3.567
+        }
+       }
+      }
+      Z FloatCinematicTrack "{606A1829ED9FD661}" {
+       TrackName "Z"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF694516CEA4A}" {
+         FrameNumber 0
+         Value 120.453
+        }
+        FloatCinematicKeyframe "{606CF6940A9DD153}" {
+         FrameNumber 36
+         Value 120.453
+        }
+       }
+      }
+     }
+     Angles Vector3CinematicTrack "{606A1829ED9FD67F}" {
+      TrackName "Angles"
+      X FloatCinematicTrack "{606A1829ED9FD672}" {
+       TrackName "X"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF69478B5B5E9}" {
+         FrameNumber 0
+         Value -85.711
+        }
+        FloatCinematicKeyframe "{606CF6940A9DD046}" {
+         FrameNumber 36
+         Value -85.711
+        }
+       }
+      }
+      Y FloatCinematicTrack "{606A1829ED9FD675}" {
+       TrackName "Y"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF694754F656E}" {
+         FrameNumber 0
+         Value 29.462
+        }
+        FloatCinematicKeyframe "{606CF6940A9DCF74}" {
+         FrameNumber 36
+         Value 29.462
+        }
+       }
+      }
+      Z FloatCinematicTrack "{606A1829ED9FD64A}" {
+       TrackName "Z"
+       Keyframes {
+        FloatCinematicKeyframe "{606CF694773C15F1}" {
+         FrameNumber 0
+         Value -10.885
+        }
+        FloatCinematicKeyframe "{606CF6940A9DCE97}" {
+         FrameNumber 36
+         Value -10.885
+        }
+       }
+      }
+     }
+     FOV FloatCinematicTrack "{606A1829ED9FD648}" {
+      TrackName "FOV"
+     }
+     DOF DOFCinematicTrack "{606A1829ED9FD647}" {
+      TrackName "DOF"
+      Enabled BooleanCinematicTrack "{606A1829ED9FD65F}" {
+       TrackName "Enabled"
+      }
+      FocusDistance FloatCinematicTrack "{606A1829ED9FD653}" {
+       TrackName "FocusDistance"
+      }
+      LengthNear FloatCinematicTrack "{606A1829ED9FD657}" {
+       TrackName "LengthNear"
+      }
+      LengthFar FloatCinematicTrack "{606A1829ED9FD654}" {
+       TrackName "LengthFar"
+      }
+     }
+     HDR HDRCinematicTrack "{606A1829ED9FD629}" {
+      TrackName "HDR"
+      ManualExposition BooleanCinematicTrack "{606A1829ED9FD62D}" {
+       TrackName "ManualExposition"
+      }
+      ExpositionLV FloatCinematicTrack "{606A1829ED9FD622}" {
+       TrackName "ExpositionLV"
+      }
+     }
+    }
+   }
+  }
+ }
+}
+SCR_ChimeraCharacter CinematicHelperEntity : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et" {
+ coords 102.655 1 120.503
+ angleY 26.153
+ {
+  CommentEntity {
+   coords 0 2 0
+   m_Comment "This guy is referenced in the CinematicTimeline"
+   m_FaceCamera 1
+  }
+ }
+}
+SCR_CameraBase CinematicHelperCamera1 : "{5FDEC6D83F0800F2}Prefabs/Cinematics/CinematicHelperCamera.et" {
+ coords 103.451 2.556 121.204
+ angleX -10.886
+ angleY -137.399
+ angleZ 7.924
+ {
+  CommentEntity {
+   m_Comment "Place this cam, press F5 to see how it looks"
+   m_FaceCamera 1
+  }
+ }
+}

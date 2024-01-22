@@ -1,0 +1,7 @@
+SCR_CameraBase {
+ ID "606D03CD5C4796D2"
+ components {
+  SCR_CinematicHelperComponent "{606B1724AB4E35CD}" {
+  }
+ }
+}
