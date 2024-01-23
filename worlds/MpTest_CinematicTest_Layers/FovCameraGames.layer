@@ -17,7 +17,7 @@ CinematicEntity Scen_CamTest {
  "	vector posOffset = \"0 0 0\";"\
  "	vector rotOffset = \"0 0 0\";"
  Scene CinematicScene "{606A1829D1323A31}" {
-  EndFrame 9000
+  EndFrame 1748
   Tracks {
    CameraCinematicTrack "{606A1829ED9FD6CD}" {
     TrackName "Camera"
@@ -26,39 +26,75 @@ CinematicEntity Scen_CamTest {
      X FloatCinematicTrack "{606A1829ED9FD690}" {
       TrackName "X"
       Keyframes {
-       FloatCinematicKeyframe "{606CF6946CC1DA6B}" {
+       FloatCinematicKeyframe "{606D65895350E75E}" {
         FrameNumber 0
-        Value 102.728
+        Value 98.992
        }
-       FloatCinematicKeyframe "{606CF6940A9DD49E}" {
-        FrameNumber 34
-        Value 102.728
+       FloatCinematicKeyframe "{606D68007FD78B14}" {
+        FrameNumber 143
+        Value 108.811
+       }
+       FloatCinematicKeyframe "{606D680076FE9479}" {
+        FrameNumber 293
+        Value 108.429
+       }
+       FloatCinematicKeyframe "{606D6800721CD61D}" {
+        FrameNumber 618
+        Value 107.697
+       }
+       FloatCinematicKeyframe "{606D68000B81A314}" {
+        FrameNumber 748
+        Value 102.639
        }
       }
      }
      Y FloatCinematicTrack "{606A1829ED9FD66D}" {
       TrackName "Y"
       Keyframes {
-       FloatCinematicKeyframe "{606CF69455897E5D}" {
+       FloatCinematicKeyframe "{606D65895350E394}" {
         FrameNumber 0
-        Value 3.567
+        Value 7.634
        }
-       FloatCinematicKeyframe "{606CF6940A9DD245}" {
-        FrameNumber 34
-        Value 3.567
+       FloatCinematicKeyframe "{606D68007FD78920}" {
+        FrameNumber 143
+        Value 4.643
+       }
+       FloatCinematicKeyframe "{606D680076FE92AF}" {
+        FrameNumber 293
+        Value 2.753
+       }
+       FloatCinematicKeyframe "{606D6800721CD2AA}" {
+        FrameNumber 618
+        Value 2.657
+       }
+       FloatCinematicKeyframe "{606D68000B81A130}" {
+        FrameNumber 748
+        Value 2.654
        }
       }
      }
      Z FloatCinematicTrack "{606A1829ED9FD661}" {
       TrackName "Z"
       Keyframes {
-       FloatCinematicKeyframe "{606CF694516CEA4A}" {
+       FloatCinematicKeyframe "{606D65895350E28B}" {
         FrameNumber 0
-        Value 120.453
+        Value 146.105
        }
-       FloatCinematicKeyframe "{606CF6940A9DD153}" {
-        FrameNumber 34
-        Value 120.453
+       FloatCinematicKeyframe "{606D68007FD78899}" {
+        FrameNumber 143
+        Value 135.761
+       }
+       FloatCinematicKeyframe "{606D680076FE9231}" {
+        FrameNumber 293
+        Value 125.478
+       }
+       FloatCinematicKeyframe "{606D6800721CD1E8}" {
+        FrameNumber 618
+        Value 124.353
+       }
+       FloatCinematicKeyframe "{606D68000B81A06F}" {
+        FrameNumber 748
+        Value 120.87
        }
       }
      }
@@ -68,39 +104,75 @@ CinematicEntity Scen_CamTest {
      X FloatCinematicTrack "{606A1829ED9FD672}" {
       TrackName "X"
       Keyframes {
-       FloatCinematicKeyframe "{606CF69478B5B5E9}" {
+       FloatCinematicKeyframe "{606D65895350E1D2}" {
         FrameNumber 0
-        Value -85.711
+        Value -13.711
        }
-       FloatCinematicKeyframe "{606CF6940A9DD046}" {
-        FrameNumber 34
-        Value -85.711
+       FloatCinematicKeyframe "{606D68007FD787E8}" {
+        FrameNumber 143
+        Value -18.811
+       }
+       FloatCinematicKeyframe "{606D680076FE91B1}" {
+        FrameNumber 293
+        Value -8.311
+       }
+       FloatCinematicKeyframe "{606D6800721CD14F}" {
+        FrameNumber 618
+        Value -3.243
+       }
+       FloatCinematicKeyframe "{606D68000B825FF1}" {
+        FrameNumber 748
+        Value -3.843
        }
       }
      }
      Y FloatCinematicTrack "{606A1829ED9FD675}" {
       TrackName "Y"
       Keyframes {
-       FloatCinematicKeyframe "{606CF694754F656E}" {
+       FloatCinematicKeyframe "{606D65895350E0E9}" {
         FrameNumber 0
-        Value 29.462
+        Value 158.762
        }
-       FloatCinematicKeyframe "{606CF6940A9DCF74}" {
-        FrameNumber 34
-        Value 29.462
+       FloatCinematicKeyframe "{606D68007FD78749}" {
+        FrameNumber 143
+        Value 191.162
+       }
+       FloatCinematicKeyframe "{606D680076FE9109}" {
+        FrameNumber 293
+        Value 208.562
+       }
+       FloatCinematicKeyframe "{606D6800721CD0A0}" {
+        FrameNumber 618
+        Value 217.235
+       }
+       FloatCinematicKeyframe "{606D68000B825F5F}" {
+        FrameNumber 748
+        Value 180.035
        }
       }
      }
      Z FloatCinematicTrack "{606A1829ED9FD64A}" {
       TrackName "Z"
       Keyframes {
-       FloatCinematicKeyframe "{606CF694773C15F1}" {
+       FloatCinematicKeyframe "{606D658953509DDA}" {
         FrameNumber 0
-        Value -10.885
+        Value 0
        }
-       FloatCinematicKeyframe "{606CF6940A9DCE97}" {
-        FrameNumber 34
-        Value -10.885
+       FloatCinematicKeyframe "{606D68007FD786DB}" {
+        FrameNumber 143
+        Value 0
+       }
+       FloatCinematicKeyframe "{606D680076FE908F}" {
+        FrameNumber 293
+        Value 0
+       }
+       FloatCinematicKeyframe "{606D6800721CD00D}" {
+        FrameNumber 618
+        Value 0
+       }
+       FloatCinematicKeyframe "{606D68000B825EAC}" {
+        FrameNumber 748
+        Value 0
        }
       }
      }

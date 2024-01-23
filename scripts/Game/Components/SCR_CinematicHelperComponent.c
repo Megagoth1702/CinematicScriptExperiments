@@ -6,7 +6,7 @@ class SCR_CinematicHelperComponentClass : ScriptComponentClass
 class SCR_CinematicHelperComponent : ScriptComponent
 {
 	[Attribute(desc: "A UI window will be created, showing the distances between them & the currently active camera (for DOF?)")]
-	ref array<string> m_sEntitiesForDistanceMeasure = {};
+	ref array<string> m_sEntitiesForDistanceMeasure;
 	
 	vector m_ownerTransform[4];
 	CameraManager m_CameraManager;
@@ -24,8 +24,6 @@ class SCR_CinematicHelperComponent : ScriptComponent
 		if (!GetGame().InPlayMode())
 			return;
 		
-		
-		
 		Math3D.MatrixIdentity4(m_ownerTransform);
 		owner.GetWorldTransform(m_ownerTransform);
 		Math3D.MatrixIdentity4(m_mCameraTransformSnapshot);
@@ -37,11 +35,7 @@ class SCR_CinematicHelperComponent : ScriptComponent
 		if(!m_CameraManager)
 			m_CameraManager = CameraManager.Cast(GetGame().GetCameraManager());
 		
-		if(!m_ActiveCamera)
-			m_ActiveCamera = m_CameraManager.CurrentCamera();
-		
-		if(m_ActiveCamera != m_CameraManager.CurrentCamera())
-			m_ActiveCamera = m_CameraManager.CurrentCamera();
+		m_ActiveCamera = m_CameraManager.CurrentCamera();
 		
 		if(!m_ActiveCamera)
 			return;
@@ -54,6 +48,7 @@ class SCR_CinematicHelperComponent : ScriptComponent
 			return;
 		
 		DoSexyDebugWindow();
+		DoDistanceDebugWindow();
 	}
 	//------------------------------------------------------------------------------------------------
 	void SetCameraTransformSnapshot()
@@ -153,23 +148,6 @@ class SCR_CinematicHelperComponent : ScriptComponent
 		GetOffsets(posOffset, rotOffset);
 		
 		DbgUI.Begin("ActiveCam Info");
-//		DbgUI.Text("Active Cam Pos " + matActiveCam[3]);
-//		if (DbgUI.Button("Copy Active Cam Pos"))
-//			{
-//				System.ExportToClipboard(matActiveCam[3].ToString());
-//			}
-//				
-//		DbgUI.Text("Active Cam RotMatrix " + rotMatString);
-//		if (DbgUI.Button("Copy Active Cam RotMatrix"))
-//			{
-//				System.ExportToClipboard(rotMatString);
-//			}
-//		
-//		DbgUI.Text("Active Cam RotMatToAngles " + Math3D.MatrixToAngles(rotMat));
-//		if (DbgUI.Button("Copy Active Cam RotMatToAngles"))
-//			{
-//				System.ExportToClipboard(Math3D.MatrixToAngles(rotMat).ToString());
-//			}
 		DbgUI.Text("PosOffset " + posOffset);
 		DbgUI.Text("RotOffset " + rotOffset);
 		if (DbgUI.Button("Copy PosOffset + RotOffset"))
@@ -187,32 +165,55 @@ class SCR_CinematicHelperComponent : ScriptComponent
 		DbgUI.End();
 
 	}
+	
+	void DoDistanceDebugWindow()
+	{
+		if(m_sEntitiesForDistanceMeasure.IsEmpty())
+		{
+			DbgUI.Text("No entities defined for distance measurement!");
+			return;
+		}
+		
+		DbgUI.Begin("Distance Info", 650.5, 550);
+		foreach(string entity: m_sEntitiesForDistanceMeasure)
+		{
+			IEntity ent = IEntity.Cast(GetGame().GetWorld().FindEntityByName(entity));
+			if(ent)
+			{
+				float distance = vector.Distance(ent.GetOrigin(), m_ActiveCamera.GetOrigin());
+				DbgUI.Text(entity + " " + distance + "m");
+			}
+			else
+				DbgUI.Text(entity + " was not found in GameWorld!");
+		}
+		DbgUI.End();
+	}
 
 	//------------------------------------------------------------------------------------------------
 	override void OnPostInit(IEntity owner)
 	{
-		// remove if unused
+		if(!System.IsConsoleApp())
 		SetEventMask(owner, EntityEvent.INIT | EntityEvent.FIXEDFRAME | EntityEvent.FRAME);
 	}
 
-	//------------------------------------------------------------------------------------------------
-	override void OnDelete(IEntity owner)
-	{
-		// remove if unused
-	}
-	/*
-	override void EOnActivate(IEntity owner)
-	{
-		super.EOnActivate(owner);
-		SetEventMask(owner, EntityEvent.FRAME);
-	}
- 
-	override void EOnDeactivate(IEntity owner)
-	{
-		super.EOnDeactivate(owner);
-		ClearEventMask(owner, EntityEvent.FRAME);
-	}
-	*/
+//	//------------------------------------------------------------------------------------------------
+//	override void OnDelete(IEntity owner)
+//	{
+//		
+//	}
+//	
+//	override void EOnActivate(IEntity owner)
+//	{
+//		super.EOnActivate(owner);
+//		SetEventMask(owner, EntityEvent.FRAME);
+//	}
+// 
+//	override void EOnDeactivate(IEntity owner)
+//	{
+//		super.EOnDeactivate(owner);
+//		ClearEventMask(owner, EntityEvent.FRAME);
+//	}
+//	
 }
 /*
 				
