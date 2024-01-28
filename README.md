@@ -1,4 +1,3 @@
-# Arma Reforger Experimental Cinematic Scripts
 > [!WARNING]
 > Highly unstable, might crash your Workbench a lot!
 
@@ -10,6 +9,7 @@
     <a href="">
         <img src="imageSrc" alt="AltTextHover">
     </a>
+    # Arma Reforger Experimental Cinematic Scripts
     <a href="">
          <img src="imageSrc" alt="AltTextHover">
     </a>
