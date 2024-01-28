@@ -1,8 +1,12 @@
-<p align="center">
+> [!MARKER]
+> Intend
+
+
+<p align="left">
     <img src="" width="0">
 </p>
 
-<p align="center">
+<p align="left">
     <a href="">
         <img src="imageSrc" alt="AltTextHover">
     </a>
@@ -15,8 +19,7 @@
 
 **Bold**
 
-> Intend
-> [!MARKER]
+
 
 
 
